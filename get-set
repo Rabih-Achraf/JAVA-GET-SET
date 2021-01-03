@@ -1,0 +1,68 @@
+
+public class Personne {
+
+	private String nom;
+	private double salaire;	
+	final int smig=2000;
+	
+	//constricteur par default
+	
+	Personne(){
+		
+	}
+	
+	
+	//constricteur
+	
+	Personne(String nom,double salaire){
+		this.nom = nom;
+		this.salaire = salaire;
+	}
+	
+	
+	
+	// afficher
+	
+	void afficher() {
+		System.out.println("Nom : "+nom);
+		System.out.println("Salaire : "+salaire);
+	}
+	
+	// get salaire
+	
+	public double getSalaire() {
+		return salaire;
+	}
+	
+	// set salaire
+	
+	public void setSalaire(double salaire) throws Exception {
+		
+		if (salaire >= smig) {
+			this.salaire = salaire;
+		}
+		else {
+			throw new Exception("erreur salaire doit etre superieur a 2000");
+		}
+		
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Personne rabih = new Personne("Achraf",5000);
+		
+		rabih.afficher();
+		
+		try {
+			rabih.setSalaire(1500);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
+}
